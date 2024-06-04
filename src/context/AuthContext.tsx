@@ -1,22 +1,30 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Импортируйте useNavigate
+import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
     isAuthenticated: boolean;
-    login: (token: string, navigate: () => void) => void;
+    login: (token: string) => void;
     logout: () => void;
 }
 
-export const AuthContext = createContext<AuthContextType>({
+const AuthContext = createContext<AuthContextType>({
     isAuthenticated: false,
     login: () => {},
     logout: () => {},
 });
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const useAuth = () => {
+    const context = useContext(AuthContext);
+    if (!context) {
+        throw new Error('useAuth must be used within an AuthProvider');
+    }
+    return context;
+};
+
+const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-    const navigate = useNavigate(); // Используйте useNavigate для навигации
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -37,10 +45,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
     }, []);
 
-    const login = (token: string, navigate: () => void) => {
+    const login = (token: string) => {
         localStorage.setItem('token', token);
         setIsAuthenticated(true);
-        navigate(); // Переход на страницу после успешной аутентификации
+        navigate('/');
     };
 
     const logout = () => {
@@ -54,3 +62,5 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         </AuthContext.Provider>
     );
 };
+
+export { AuthContext, AuthProvider, useAuth };
