@@ -1,25 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/havbar/Navbar';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AuthSwitch from './components/AuthSwitch';
+import { AuthProvider } from './context/AuthContext';
+import MainPage from './components/MainPage'; // Import MainPage
 
 const App: React.FC = () => {
-  return (
-    <Router>
-      <div>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <AuthProvider>
+                <Routes>
+                    <Route path="/auth" element={<AuthSwitch />} />
+                    <Route path="/" element={<MainPage />} />
+                </Routes>
+            </AuthProvider>
+        </Router>
+    );
 };
 
 export default App;
