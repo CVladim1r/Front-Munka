@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { orange } from '@mui/material/colors';
 import { TextField, Button, Typography, Paper } from '@mui/material';
@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
         <ThemeProvider theme={theme}>
             <Paper elevation={3} style={{ padding: 20, maxWidth: 400, margin: 'auto', marginTop: 50 }}>
                 <Typography variant="h5" align="center" gutterBottom>
-                    Регистрация
+                    Авторизация
                 </Typography>
                 <form onSubmit={handleSubmit}>
                     <TextField
@@ -57,8 +57,14 @@ const LoginForm: React.FC = () => {
                         required
                     />
                     <Button type="submit" variant="contained" color="primary" fullWidth>
-                        Зарегистрироваться
+                        Войти
                     </Button>
+                    <Typography variant="body1" align="center" style={{ marginTop: 20 }}>
+                        Нет аккаунта?{' '}
+                        <Link to="/registration" style={{ color: theme.palette.primary.main }}>
+                            Зарегистрируйтесь
+                        </Link>
+                    </Typography>
                 </form>
             </Paper>
         </ThemeProvider>
