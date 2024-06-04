@@ -9,7 +9,7 @@ interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType>({
-    isAuthenticated: false,
+    isAuthenticated: true, //
     login: () => {},
     logout: () => {},
 });
@@ -23,7 +23,7 @@ const useAuth = () => {
 };
 
 const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true); //
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -47,13 +47,13 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 
     const login = (token: string) => {
         localStorage.setItem('token', token);
-        setIsAuthenticated(true);
+        setIsAuthenticated(true); //
         navigate('/');
     };
 
     const logout = () => {
         localStorage.removeItem('token');
-        setIsAuthenticated(false);
+        setIsAuthenticated(false); //
     };
 
     return (

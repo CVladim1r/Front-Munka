@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LoginForm from '../components/LoginForm';
-import RegisterForm from '../components/RegisterForm';
+import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 import { Link } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -13,6 +13,8 @@ const theme = createTheme({
         },
     },
 });
+
+// Перемещение между регистрацией и авторизацией
 
 const AuthSwitch: React.FC = () => {
     const [isLogin, setIsLogin] = useState(true);

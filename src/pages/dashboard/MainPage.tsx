@@ -1,6 +1,6 @@
+import { Box, Button, Container, Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import { Container, Typography, Box, Button } from '@mui/material';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 const MainPage: React.FC = () => {
     const { logout } = useContext(AuthContext);
