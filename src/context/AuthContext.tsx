@@ -9,7 +9,7 @@ interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType>({
-    isAuthenticated: true, //
+    isAuthenticated: false, //
     login: () => {},
     logout: () => {},
 });
@@ -23,7 +23,7 @@ const useAuth = () => {
 };
 
 const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true); //
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false); //
     const navigate = useNavigate();
 
     useEffect(() => {

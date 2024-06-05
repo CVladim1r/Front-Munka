@@ -27,7 +27,7 @@ const LoginForm: React.FC = () => {
             login(response.data.access_token);
             navigate('/'); // Переход на главную страницу после успешной аутентификации
         } catch (error) {
-            console.error('Login error');
+            alert('Не удалось авторизоваться'); // !!!доделать
         }
     };
 
