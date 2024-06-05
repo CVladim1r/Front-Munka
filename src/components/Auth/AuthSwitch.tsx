@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LoginForm from './LoginForm';
-import RegisterForm from './RegisterForm';
+import LoginForm from './Login/LoginForm.tsx';
+import RegisterForm from './Registration/RegistrationForm.tsx';
 import { Link } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';

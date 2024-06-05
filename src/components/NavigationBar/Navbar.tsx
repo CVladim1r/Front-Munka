@@ -4,7 +4,7 @@ import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { Home, Assessment, Contacts, Person, Work } from '@mui/icons-material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { orange } from '@mui/material/colors';
-import LogoutButton from '../LogoutButton';
+import LogoutButton from '../Buttons/LogoutButton.tsx';
 
 const theme = createTheme({
     palette: {

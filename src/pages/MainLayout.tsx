@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import Navbar from '../components/navbar/Navbar';
-import Header from '../components/navbar/Header';
+import Navbar from '../components/NavigationBar/Navbar';
+import Header from '../components/NavigationBar/Header';
 import { Box } from '@mui/material';
 
 type MainLayoutProps = {

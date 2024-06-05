@@ -2,8 +2,8 @@ import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import MainPage from './pages/dashboard/MainPage';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
+import LoginPage from './pages/authentication/LoginPage.tsx';
+import RegisterForm from './components/Auth/Registration/RegistrationForm';
 import MainLayout from './pages/MainLayout';
 import AnalyticsPage from './pages/dashboard/AnalyticsPage';
 import ContactsPage from './pages/dashboard/ContactsPage';
@@ -25,7 +25,7 @@ const AppRoutes: React.FC = () => {
 
     return (
         <Routes>
-            <Route path="/login" element={<LoginForm />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/registration" element={<RegisterForm />} />
             {isAuthenticated ? (
                 <Route
