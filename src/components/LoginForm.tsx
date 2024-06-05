@@ -4,8 +4,9 @@ import { AuthContext } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { orange } from '@mui/material/colors';
-import { TextField, Button, Typography, Paper } from '@mui/material';
-
+import { TextField, Button, Typography, Paper, Divider} from '@mui/material';
+import Google from '../../public/Google.svg';
+import image from '../../public/image.svg';
 const theme = createTheme({
     palette: {
         primary: {
@@ -33,11 +34,16 @@ const LoginForm: React.FC = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Paper elevation={3} style={{ padding: 20, maxWidth: 400, margin: 'auto', marginTop: 50 }}>
-                <Typography variant="h5" align="center" gutterBottom>
+            <img src={image} alt="image" style={{float:'right'}} />
+            <Paper elevation={3} style={{ padding: 20, maxWidth: 400, margin: 'auto', marginTop: 50}}>
+                <Typography variant="h5" align="left" gutterBottom >
                     Авторизация
                 </Typography>
+                <Typography>Введи свою почту и пароль для авторизации!</Typography>
+                <img src={Google} alt="google" />
+                <Divider variant='middle' style={{marginTop: 15}}/>
                 <form onSubmit={handleSubmit}>
+                    <Typography>E-mail</Typography>
                     <TextField
                         label="Email"
                         type="email"
@@ -47,6 +53,7 @@ const LoginForm: React.FC = () => {
                         margin="normal"
                         required
                     />
+                    <Typography>Пароль</Typography>
                     <TextField
                         label="Пароль"
                         type="password"
@@ -56,6 +63,17 @@ const LoginForm: React.FC = () => {
                         margin="normal"
                         required
                     />
+                    <Typography>Повторите пароль</Typography>
+                    <TextField
+                        label='Повторите пароль'
+                        type='password'
+                        value={password}
+                        onChange={(g) => setPassword(g.target.value)}
+                        fullWidth
+                        margin='normal'
+                        required
+                    />
+
                     <Button type="submit" variant="contained" color="primary" fullWidth>
                         Войти
                     </Button>

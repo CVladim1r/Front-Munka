@@ -26,7 +26,7 @@ const RegisterForm: React.FC = () => {
             await axios.post('http://localhost:5000/register', { email, password, full_name: fullName, address, phone });
             alert('Registration successful');
         } catch (error) {
-            console.error('Registration error');
+            alert('Не удалось зарегистрироваться');
         }
     };
 
