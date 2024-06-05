@@ -34,14 +34,15 @@ const LoginForm: React.FC = () => {
 
     return (
         <ThemeProvider theme={theme}>
-                <Container maxWidth = 'sm' style={{
+                <Container style={{
                 marginLeft: '0',
-                display: 'inline-block',
+                display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
                 height: '100%',
-                maxWidth: '30%'
+                marginTop: '25vh',
+                width: '50%'
                 }}>
                     <Typography variant="h5" align="left" gutterBottom >
                         Авторизация

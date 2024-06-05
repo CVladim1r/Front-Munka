@@ -14,10 +14,9 @@ const theme = createTheme({
     },
 });
 
-// Перемещение между регистрацией и авторизацией
 
 const AuthSwitch: React.FC = () => {
-    const [isLogin, setIsLogin] = useState(true);
+    const [isLogin] = useState(true);
 
     return (
         <ThemeProvider theme={theme}>

@@ -1,14 +1,12 @@
 import LoginForm from '../../components/Auth/Login/LoginForm.tsx';
 import LoginImage from '../../components/Auth/LoginImage.tsx';
-import About from '../../components/Auth/AboutContainer.tsx';
 import {FC} from 'react'
 
 const LoginPage: FC = () =>{
     return(
-        <div>
-            <LoginImage />
+        <div style={{display: 'flex', minHeight: "100vh"}}>
             <LoginForm />
-            <About/>
+            <LoginImage />
         </div>
     );
 }
