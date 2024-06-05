@@ -14,7 +14,7 @@ const theme = createTheme({
 const About:FC = () => {
     return(
         <ThemeProvider theme={theme}>
-            <div style={{display: "flex", width: "50%", borderEndStartRadius: '60px'}}>
+            <div style={{display: "flex", width: "50%"}}>
                 <Typography align="center" variant="body1" style={{ marginTop: 20 }}>
                     Узнать больше о Munka на 
                 </Typography>
