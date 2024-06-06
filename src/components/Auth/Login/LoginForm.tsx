@@ -4,7 +4,7 @@ import { AuthContext } from '../../../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { orange } from '@mui/material/colors';
-import { TextField, Button, Typography, Container, Divider} from '@mui/material';
+import { TextField, Button, Typography, Container, Divider, Checkbox} from '@mui/material';
 import Google from '../../../../public/Google.svg';
 
 const theme = createTheme({
@@ -53,6 +53,8 @@ const LoginForm: React.FC = () => {
                 width: '50%',
                 marginBlock:'15vh'
                 }}>
+                    <div>
+
                         <Typography variant="h5" alignItems="left" gutterBottom style={{color: '#72412B'}} >
                             <strong>Авторизация</strong>
                         </Typography>
@@ -71,6 +73,7 @@ const LoginForm: React.FC = () => {
                             fullWidth
                             margin="normal"
                             required
+                            sx={{borderRadius: '16px'}}
                         />
                         <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56'}}>Пароль</Typography>
                         <TextField
@@ -82,16 +85,14 @@ const LoginForm: React.FC = () => {
                             margin="normal"
                             required
                         />
-                        <Typography style={{fontSize: '16px', color:'#9F6D56'}}>Повторите пароль</Typography>
-                        <TextField
-                            label='Повторите пароль'
-                            type='password'
-                            value={rpassword}
-                            onChange={(g) => setRPassword(g.target.value)}
-                            fullWidth
-                            margin='normal'
-                            required
-                        />
+                        <div style={{display: 'flex', flexDirection: 'row',}}>
+                            <div style={{display: 'flex'}}>
+                                <Checkbox>
+                                </Checkbox>
+                                <Typography style={{}}>Показать пароль</Typography>
+                            </div>
+                            <Link to='/'>Забыл пароль?</Link>
+                        </div>
                         <Button type="submit" variant="contained" color="primary" fullWidth>
                             Войти
                         </Button>
@@ -102,7 +103,7 @@ const LoginForm: React.FC = () => {
                             </Link>
                             </Typography>
                         </form>
-                    
+                    </div>
                 </Container>
         </ThemeProvider>
     );
