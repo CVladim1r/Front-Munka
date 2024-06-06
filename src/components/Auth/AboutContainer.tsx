@@ -14,11 +14,18 @@ const theme = createTheme({
 const About:FC = () => {
     return(
         <ThemeProvider theme={theme}>
-            <div style={{display: "flex", width: "50%"}}>
-                <Typography align="center" variant="body1" style={{ marginTop: 20 }}>
-                    Узнать больше о Munka на 
+            <div style={{
+                display: "flex",
+                width: "50%",
+                height: '10%',
+                border: '2px solid white',
+                borderRadius: '26px 26px 26px 26px',
+                alignContent: 'center'
+                }}>
+                <Typography variant="body1" style={{ marginTop: 20, textAlign:'center', width : '50vh', height: '5vh' }}>
+                    Узнать больше о Munka на <a href="#" > XUI</a>
                 </Typography>
-                <a href="#" > XUI</a>
+
             </div>
         </ThemeProvider>
     );

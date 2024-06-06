@@ -3,6 +3,7 @@ import { orange } from "@mui/material/colors";
 import { createTheme, Box } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import About from '../../components/Auth/AboutContainer.tsx';
+import Munka from '../../assets/munka.svg';
 
 
 const theme = createTheme({
@@ -15,24 +16,25 @@ const theme = createTheme({
 const Image:FC = () => {
     return(
         <ThemeProvider theme={theme}>
-                <Box 
+            <Box 
                 sx={{
-                    borderRadius: '0 0 0 228px'
-                }} 
-                
-                style={{
+                    borderRadius: '0 0 0 228px',
+                    display:'flex',
+                    flexDirection:'column',
+                    alignContent:'center',
                     backgroundColor:'#E29D5A',
                     height: '100%',
                     textAlign: 'left',
                     float: 'right',
-                    display: 'inline-block',
                     minWidth: '50%',
                     minHeight: '100vh',
-                    marginTop: '0 top'
+                    marginTop: '0',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                 }}>
-                    Munka
+                    <img src={Munka} alt="Munka" style={{margin: '0 0 25vh 0'}} />
                     <About />
-                </Box>
+            </Box>
                 
 
         </ThemeProvider>
