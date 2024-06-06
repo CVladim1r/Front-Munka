@@ -5,7 +5,7 @@ import { Typography, List, ListItem, Box} from "@mui/material";
 const NavbarSecond: FC = () => {
     return (
         <Box sx={{ position: 'absolute', bottom: 0, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize:'14' }}>
-            <Box sx={{marginRight:'20vh'}}>
+            <Box sx={{marginLeft:'20vh'}}>
                 <List sx={{ display: 'flex', gap: '20px', whiteSpace:'nowrap'}} component="nav">
                     <ListItem>
                         <Link to="/about" style={{textDecoration:'none', userSelect:'none', color:'white'}}>О нас</Link>
@@ -21,7 +21,7 @@ const NavbarSecond: FC = () => {
                     </ListItem>
                 </List>
             </Box>
-            <Typography style={{marginLeft:'32vh', fontSize:'14px', color:'#D0B1A3'}}>&copy;Munka. Все права защищены</Typography>
+            <Typography style={{marginRight:'35vh', fontSize:'14px', color:'#D0B1A3'}}>&copy;Munka. Все права защищены</Typography>
         </Box>
     );
 }

@@ -42,22 +42,23 @@ const LoginForm: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 height: '100%',
-                width: '50%'
+                width: '50%',
+                marginTop:'20vh'
                 }}>
                     <div>
 
-                        <Typography variant="h5" alignItems="left" gutterBottom style={{color: '#72412B', marginBottom:'8px'}} >
+                        <Typography variant="h5" alignItems="left" gutterBottom style={{color: '#72412B'}} >
                             <strong>Авторизация</strong>
                         </Typography>
-                        <Typography style={{fontSize: '16px', color: '#D0B1A3', marginBottom:'36px'}}>
+                        <Typography style={{fontSize: '16px', color: '#D0B1A3'}}>
                             Введи свою почту и пароль для авторизации!
                         </Typography>
-                    <img src={Google} alt="google" style={{margin: '0 0 26px 0 '}}/>
-                    <Divider variant='middle' style={{margin: '0px 0 26px 0'}}>
+                    <img src={Google} alt="google" />
+                    <Divider variant='middle'>
                         <Typography sx = {{color: ' #A3AED0'}}>or</Typography>
                     </Divider>
                     <form onSubmit={handleSubmit}>
-                        <Typography style={{fontSize: '16px', color:'#9F6D56', marginBottom: '6.5px'}}>E-mail</Typography>
+                        <Typography style={{fontSize: '16px', color:'#9F6D56'}}>E-mail</Typography>
                         <TextField
                             label="Email"
                             type="email"
@@ -71,7 +72,7 @@ const LoginForm: React.FC = () => {
                                 sx: { borderRadius: '16px' }
                             }}
                         />
-                        <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56', marginBottom:'6.5px'}}>Пароль</Typography>
+                        <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56'}}>Пароль</Typography>
                         <TextField
                             label="Пароль"
                             type="password"
@@ -96,7 +97,7 @@ const LoginForm: React.FC = () => {
                         <Button type="submit" variant="contained" fullWidth style={{backgroundColor: '#E39E5B', borderRadius: '16px'}}>
                             <Typography sx={{color:'white'}}>Sign in</Typography>
                         </Button>
-                        <Typography variant="body1" align="left" style={{ marginTop: 20, color:'#74522B', textShadow:'2px 2px 2px 2px #E39E5B'}}>
+                        <Typography variant="body1" align="left" style={{color:'#74522B', textShadow:'2px 2px 2px 2px #E39E5B'}}>
                             Не зарегистрирован?{' '}
                             <Link to="/registration" style={{ color: theme.palette.primary.main, textDecoration:'none', fontWeight:'bold', textShadow:'2px 2px 2px 2px #E39E5B'}}>
                                 Создать аккаунт

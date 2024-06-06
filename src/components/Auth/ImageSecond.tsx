@@ -30,7 +30,7 @@ const ImageSecond:FC = () => {
                     alignItems: 'center',
                     justifyContent: 'center'
                 }}>
-                    <img src={Munka} alt="Munka" style={{margin: '0 0 25vh 0', width:'80vh', alignContent:'center'}} />
+                    <img src={Munka} alt="Munka" style={{margin: '0 0 25vh 0', width:'80vh', alignContent:'right'}} />
                     <About />
             </Box>
                 

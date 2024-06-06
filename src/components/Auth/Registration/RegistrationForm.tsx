@@ -44,7 +44,7 @@ const RegisterForm: React.FC = () => {
                 height: '100%',
                 width: '50%'
                 }}>
-                <div>
+                <div style={{width:'410px', height:'auto'}}>
 
                     <Typography variant="h5" align="left" gutterBottom sx={{fontSize: '36px', color:'#72412B', marginBottom:'8px'}}>
                         Регистрация
