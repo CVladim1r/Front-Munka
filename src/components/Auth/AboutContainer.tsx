@@ -2,7 +2,6 @@ import {FC} from "react";
 import { Typography, createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { orange } from "@mui/material/colors";
-
 const theme = createTheme({
     palette: {
         primary: {
@@ -17,13 +16,15 @@ const About:FC = () => {
             <div style={{
                 display: "flex",
                 width: "50%",
-                height: '10%',
-                border: '2px solid white',
+                height: '10vh',
+                border: '1px solid white',
                 borderRadius: '26px 26px 26px 26px',
                 alignContent: 'center'
                 }}>
-                <Typography variant="body1" style={{ marginTop: 20, textAlign:'center', width : '50vh', height: '5vh' }}>
-                    Узнать больше о Munka на <a href="#" > XUI</a>
+                <Typography variant="body1" style={{ marginTop: 20, textAlign:'center', width : '50vh', height: '5vh', color:'white' }}>
+                    Узнать больше о Munka на {" "}
+                    <br />
+                    <a href="#" style={{textDecoration: 'none', userSelect:'none', color:'white', fontSize:'30px'}}>munka.com</a>
                 </Typography>
 
             </div>

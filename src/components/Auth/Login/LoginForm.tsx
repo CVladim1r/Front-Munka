@@ -15,22 +15,14 @@ const theme = createTheme({
     },
 });
 
-
 const LoginForm: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [rpassword, setRPassword] = useState('')
-    const [passwordMatch, setPasswordMatch] = useState(true)
-
     const { login } = useContext(AuthContext) || { login: () => {} };
     const navigate = useNavigate(); // Хук для навигации
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (password !== rpassword) {
-            setPasswordMatch(false);
-            return;
-        }
         try {
             const response = await axios.post('http://localhost:5000/login', { email, password });
             login(response.data.access_token);
@@ -39,6 +31,7 @@ const LoginForm: React.FC = () => {
             alert('Не удалось авторизоваться'); // !!!доделать
         }
     };
+
 
     return (
         <ThemeProvider theme={theme}>
@@ -49,22 +42,22 @@ const LoginForm: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 height: '100%',
-                marginTop: '25vh',
-                width: '50%',
-                marginBlock:'15vh'
+                width: '50%'
                 }}>
                     <div>
 
-                        <Typography variant="h5" alignItems="left" gutterBottom style={{color: '#72412B'}} >
+                        <Typography variant="h5" alignItems="left" gutterBottom style={{color: '#72412B', marginBottom:'8px'}} >
                             <strong>Авторизация</strong>
                         </Typography>
-                        <Typography style={{fontSize: '16px', color: '#D0B1A3'}}>
+                        <Typography style={{fontSize: '16px', color: '#D0B1A3', marginBottom:'36px'}}>
                             Введи свою почту и пароль для авторизации!
                         </Typography>
-                    <img src={Google} alt="google" style={{margin: '3vh 0 3vh 0 '}}/>
-                    <Divider variant='fullWidth' style={{marginTop: '3px'}}/>
+                    <img src={Google} alt="google" style={{margin: '0 0 26px 0 '}}/>
+                    <Divider variant='middle' style={{margin: '0px 0 26px 0'}}>
+                        <Typography sx = {{color: ' #A3AED0'}}>or</Typography>
+                    </Divider>
                     <form onSubmit={handleSubmit}>
-                        <Typography style={{fontSize: '16px', color:'#9F6D56'}}>E-mail</Typography>
+                        <Typography style={{fontSize: '16px', color:'#9F6D56', marginBottom: '6.5px'}}>E-mail</Typography>
                         <TextField
                             label="Email"
                             type="email"
@@ -73,9 +66,12 @@ const LoginForm: React.FC = () => {
                             fullWidth
                             margin="normal"
                             required
-                            sx={{borderRadius: '16px'}}
+                            sx={{marginBottom:'3vh'}}
+                            InputProps={{
+                                sx: { borderRadius: '16px' }
+                            }}
                         />
-                        <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56'}}>Пароль</Typography>
+                        <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56', marginBottom:'6.5px'}}>Пароль</Typography>
                         <TextField
                             label="Пароль"
                             type="password"
@@ -84,27 +80,31 @@ const LoginForm: React.FC = () => {
                             fullWidth
                             margin="normal"
                             required
+                            sx ={{marginBottom:'2vh'}}
+                            InputProps={{
+                                sx: { borderRadius: '16px' }
+                            }}
                         />
-                        <div style={{display: 'flex', flexDirection: 'row',}}>
+                        <div style={{display: 'flex', flexDirection: 'row', justifyContent:'space-between', paddingBottom:'2px'}}>
                             <div style={{display: 'flex'}}>
                                 <Checkbox>
                                 </Checkbox>
-                                <Typography style={{}}>Показать пароль</Typography>
+                                <Typography style={{marginTop:'1vh', marginBottom:'1vh'}}>Показать пароль</Typography>
                             </div>
-                            <Link to='/'>Забыл пароль?</Link>
+                            <Link to='/' style={{display:'flex', justifyContent:'column', alignItems:'center', textDecoration: 'none', color:'#E39E5B'}}>Забыл пароль?</Link>
                         </div>
-                        <Button type="submit" variant="contained" color="primary" fullWidth>
-                            Войти
+                        <Button type="submit" variant="contained" fullWidth style={{backgroundColor: '#E39E5B', borderRadius: '16px'}}>
+                            <Typography sx={{color:'white'}}>Sign in</Typography>
                         </Button>
-                        <Typography variant="body1" align="center" style={{ marginTop: 20 }}>
-                            Нет аккаунта?{' '}
-                            <Link to="/registration" style={{ color: theme.palette.primary.main }}>
-                                Зарегистрируйтесь
+                        <Typography variant="body1" align="left" style={{ marginTop: 20, color:'#74522B', textShadow:'2px 2px 2px 2px #E39E5B'}}>
+                            Не зарегистрирован?{' '}
+                            <Link to="/registration" style={{ color: theme.palette.primary.main, textDecoration:'none', fontWeight:'bold', textShadow:'2px 2px 2px 2px #E39E5B'}}>
+                                Создать аккаунт
                             </Link>
                             </Typography>
-                        </form>
-                    </div>
-                </Container>
+                    </form>
+                </div>
+            </Container>
         </ThemeProvider>
     );
 };

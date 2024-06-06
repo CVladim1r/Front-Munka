@@ -6,7 +6,7 @@ import AuthBar from '../../components/NavigationBar/Auth/Navbar.tsx';
 
 const LoginPage: FC = () =>{
     return(
-        <div style={{display: 'flex', minHeight: "100vh"}}>
+        <div style={{display: 'flex', maxHeight:'100%'}}>
             <LoginForm />
             <LoginImage />
             <AuthBar />

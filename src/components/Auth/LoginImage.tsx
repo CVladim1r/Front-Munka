@@ -25,14 +25,12 @@ const Image:FC = () => {
                     backgroundColor:'#E29D5A',
                     height: '100%',
                     textAlign: 'left',
-                    float: 'right',
                     minWidth: '50%',
                     minHeight: '100vh',
-                    marginTop: '0',
                     alignItems: 'center',
                     justifyContent: 'center'
                 }}>
-                    <img src={Munka} alt="Munka" style={{margin: '0 0 25vh 0'}} />
+                    <img src={Munka} alt="Munka" style={{margin: '0 0 25vh 0', width:'80vh', alignContent:'center'}} />
                     <About />
             </Box>
                 
