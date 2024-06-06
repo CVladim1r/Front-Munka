@@ -66,6 +66,9 @@ const RegisterForm: React.FC = () => {
                             fullWidth
                             margin="normal"
                             required
+                            InputProps={{
+                                sx: { borderRadius: '16px' }
+                            }}
                         />
                         <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56'}}>Пароль</Typography>
                         <TextField
@@ -77,6 +80,9 @@ const RegisterForm: React.FC = () => {
                             margin="normal"
                             required
                             style={{marginBottom:'px'}}
+                            InputProps={{
+                                sx: { borderRadius: '16px' }
+                            }}
                         />
                         <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56'}}>ФИО</Typography>
                         <TextField
@@ -87,6 +93,9 @@ const RegisterForm: React.FC = () => {
                             fullWidth
                             margin="normal"
                             style={{marginBottom:'12px'}}
+                            InputProps={{
+                                sx: { borderRadius: '16px' }
+                            }}
                         />
                         <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56'}}>Адрес</Typography>
                         <TextField
@@ -97,6 +106,9 @@ const RegisterForm: React.FC = () => {
                             fullWidth
                             margin="normal"
                             style={{marginBottom:'12px'}}
+                            InputProps={{
+                                sx: { borderRadius: '16px' }
+                            }}
                         />
                         <Typography style={{fontSize: '16px', width: '50vh', color: '#9F6D56'}}>Телефон</Typography>
                         <TextField
@@ -107,6 +119,9 @@ const RegisterForm: React.FC = () => {
                             fullWidth
                             margin="normal"
                             style={{marginBottom:'12px'}}
+                            InputProps={{
+                                sx: { borderRadius: '16px' }
+                            }}
                         />
                         <Button type="submit" variant="contained" fullWidth style={{backgroundColor: '#E39E5B', borderRadius: '16px'}}>
                             <Typography sx={{color:'white'}}>Sign in</Typography>

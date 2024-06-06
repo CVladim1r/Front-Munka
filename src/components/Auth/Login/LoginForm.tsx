@@ -45,7 +45,7 @@ const LoginForm: React.FC = () => {
                 width: '50%',
                 marginTop:'20vh'
                 }}>
-                    <div>
+                    <div style={{width:'410px'}}>
 
                         <Typography variant="h5" alignItems="left" gutterBottom style={{color: '#72412B'}} >
                             <strong>Авторизация</strong>
@@ -94,7 +94,7 @@ const LoginForm: React.FC = () => {
                             </div>
                             <Link to='/' style={{display:'flex', justifyContent:'column', alignItems:'center', textDecoration: 'none', color:'#E39E5B'}}>Забыл пароль?</Link>
                         </div>
-                        <Button type="submit" variant="contained" fullWidth style={{backgroundColor: '#E39E5B', borderRadius: '16px'}}>
+                        <Button type="submit" variant="contained" fullWidth style={{backgroundColor: '#E39E5B', borderRadius: '16px', marginBottom:'26px'}}>
                             <Typography sx={{color:'white'}}>Sign in</Typography>
                         </Button>
                         <Typography variant="body1" align="left" style={{color:'#74522B', textShadow:'2px 2px 2px 2px #E39E5B'}}>
