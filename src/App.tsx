@@ -3,6 +3,7 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import MainPage from './pages/dashboard/MainPage';
 import LoginPage from './pages/authentication/LoginPage.tsx';
+import RegisterPage from './pages/authentication/RegisterPage.tsx'
 import RegisterForm from './components/Auth/Registration/RegistrationForm';
 import MainLayout from './pages/MainLayout';
 import AnalyticsPage from './pages/dashboard/AnalyticsPage';
@@ -26,7 +27,7 @@ const AppRoutes: React.FC = () => {
     return (
         <Routes>
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/registration" element={<RegisterForm />} />
+            <Route path="/registration" element={<RegisterPage />} />
             {isAuthenticated ? (
                 <Route
                     path="/*"

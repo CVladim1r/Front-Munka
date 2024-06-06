@@ -2,7 +2,7 @@ import {FC} from "react";
 import { orange } from "@mui/material/colors";
 import { createTheme, Box } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
-import About from '../../components/Auth/AboutContainer.tsx';
+import About from './AboutContainer.tsx';
 import Munka from '../../assets/munka.svg';
 
 
