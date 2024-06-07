@@ -10,6 +10,7 @@ import AnalyticsPage from './pages/dashboard/AnalyticsPage';
 import ContactsPage from './pages/dashboard/ContactsPage';
 import ProfilePage from './pages/dashboard/ProfilePage';
 import VacanciesPage from './pages/dashboard/VacanciesPage';
+import { Login } from '@mui/icons-material';
 
 const App: React.FC = () => {
     return (
@@ -26,7 +27,7 @@ const AppRoutes: React.FC = () => {
 
     return (
         <Routes>
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<MainPage />} />
             <Route path="/registration" element={<RegisterPage />} />
             {isAuthenticated ? (
                 <Route
