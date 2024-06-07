@@ -10,7 +10,10 @@ import AnalyticsPage from './pages/dashboard/AnalyticsPage';
 import ContactsPage from './pages/dashboard/ContactsPage';
 import ProfilePage from './pages/dashboard/ProfilePage';
 import VacanciesPage from './pages/dashboard/VacanciesPage';
+import TariffsPage from './pages/dashboard/TariffsPage.tsx';
+import ResponsivePage from './pages/dashboard/Responive.tsx';
 import { Login } from '@mui/icons-material';
+
 
 const App: React.FC = () => {
     return (
@@ -36,10 +39,12 @@ const AppRoutes: React.FC = () => {
                         <MainLayout>
                             <Routes>
                                 <Route path="dashboard/main" element={<MainPage />} />
-                                <Route path="dashboard/analytics" element={<AnalyticsPage />} />
                                 <Route path="dashboard/contacts" element={<ContactsPage />} />
-                                <Route path="dashboard/profile" element={<ProfilePage />} />
+                                <Route path="dashboard/analytics" element={<AnalyticsPage />} />
                                 <Route path="dashboard/vacancies" element={<VacanciesPage />} />
+                                <Route path="dashboard/responses" element={<ResponsivePage />} />
+                                <Route path="dashboard/tariffs" element={< TariffsPage/>} />
+                                <Route path="dashboard/profile" element={<ProfilePage />} />
                                 <Route path="*" element={<Navigate to="/dashboard/main" />} />
                             </Routes>
                         </MainLayout>

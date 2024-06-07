@@ -12,10 +12,9 @@ const MainBody:FC = () => {
     return(
         <ThemeProvider theme={theme}>
                     <Container sx={{display:'flex', justifyContent:'center', flexDirection:'column'}}>  
-                        <Typography sx={{display:'flex'}}>Страница / Главная</Typography>
-                        <Typography sx={{display:'flex'}}> Главная</Typography>
+                        <Typography sx={{display:'flex', color:'#D0B1A3', fontSize:'14px'}}>Страница / Главная</Typography>
+                        <Typography sx={{display:'flex', color:'#E19C59', fontSize:'34px',fontWeight:'bold'}}> Главная</Typography>
                         <Container sx={{width:'100vh', marginBottom:'20px'}}>
-                            <Typography sx={{backgroundColor:'white', display:'inline-block', width:'248px', height:'97px',marginRight:'20px'}}> Просмотры</Typography>
                             <Typography sx={{backgroundColor:'white', display:'inline-block', width:'248px', height:'97px',marginRight:'20px'}}> Просмотры</Typography>
                             <Typography sx={{backgroundColor:'white', display:'inline-block', width:'248px', height:'97px',marginRight:'20px'}}>  Баланс</Typography>
                             <Typography sx={{backgroundColor:'white', display:'inline-block', width:'248px', height:'97px',marginRight:'20px'}}> Новых заявок</Typography>

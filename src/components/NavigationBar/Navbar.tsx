@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { List, ListItem, ListItemIcon, ListItemText, Box, Divider, Typography} from '@mui/material';
-import { Home, Assessment, Contacts, Person, Work } from '@mui/icons-material';
+import { Home, Assessment, Contacts, Person, Work, Money, PersonSearch, MarkAsUnread, Markunread } from '@mui/icons-material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LogoutButton from '../Buttons/LogoutButton.tsx';
 
@@ -10,6 +10,9 @@ const theme = createTheme({
         primary: {
             main: '#FFFFFF',
         },
+        secondary:{
+            main:'#D0B1A3'
+        }
     },
 });
 
@@ -17,39 +20,52 @@ const Navbar: React.FC = () => {
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{backgroundColor: theme.palette.primary.main, borderRadius:'20px', width:'290px', height:'1152px',display:'inline-block'}}>
-                <Typography sx={{color:'#E19C59', margin:'54px 136px 89px 54px', fontSize:'26px'}}><strong>MUNKA</strong></Typography>
-                <List component="nav">
+                <Typography sx={{color:'#E19C59', margin:'54px 136px 48px 54px', fontSize:'26px'}}><strong>MUNKA</strong></Typography>
+                <Divider variant='fullWidth' sx={{marginBottom:'40px'}}></Divider>
+                <List component="nav" sx={{marginLeft:'35px'}}>
                     <ListItem button component={Link} to="/dashboard/main">
                         <ListItemIcon>
-                            <Home color="primary" />
+                            <Home color="secondary" />
                         </ListItemIcon>
                         <ListItemText primary="Главная" />
                     </ListItem>
-                    <ListItem button component={Link} to="/dashboard/analytics">
-                        <ListItemIcon>
-                            <Assessment color="primary" />
-                        </ListItemIcon>
-                        <ListItemText primary="Аналитика" />
-                    </ListItem>
                     <ListItem button component={Link} to="/dashboard/contacts">
                         <ListItemIcon>
-                            <Contacts color="primary" />
+                            <Contacts color="secondary" />
                         </ListItemIcon>
                         <ListItemText primary="Контакты" />
                     </ListItem>
-                    <ListItem button component={Link} to="/dashboard/profile">
+                    <ListItem button component={Link} to="/dashboard/analytics">
                         <ListItemIcon>
-                            <Person color="primary"/>
+                            <Assessment color="secondary" />
                         </ListItemIcon>
-                        <ListItemText primary="Профиль" />
+                        <ListItemText primary="Аналитика" />
                     </ListItem>
                     <ListItem button component={Link} to="/dashboard/vacancies">
                         <ListItemIcon>
-                            <Work color="primary" />
+                            <PersonSearch color="secondary" />
                         </ListItemIcon>
                         <ListItemText primary="Вакансии" />
                     </ListItem>
-                    <LogoutButton />
+                    <ListItem button component={Link} to="/dashboard/responses">
+                        <ListItemIcon>
+                            <Markunread color="secondary" />
+                        </ListItemIcon>
+                        <ListItemText primary="Отклики" />
+                    </ListItem>
+                    <ListItem button component={Link} to="/dashboard/tariffs">
+                        <ListItemIcon>
+                            <Money color="secondary" />
+                        </ListItemIcon>
+                        <ListItemText primary="Тарифы" />
+                    </ListItem>
+                    <ListItem button component={Link} to="/dashboard/profile">
+                        <ListItemIcon>
+                            <Person color="secondary"/>
+                        </ListItemIcon>
+                        <ListItemText primary="Профиль" />
+                    </ListItem>
+                    <LogoutButton/>
                 </List>
             </Box>
         </ThemeProvider>

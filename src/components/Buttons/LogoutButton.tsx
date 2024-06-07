@@ -13,9 +13,9 @@ const LogoutButton: React.FC = () => {
     return (
         <ListItem button onClick={handleLogout}>
             <ListItemIcon>
-                <Logout color='primary' />
+                <Logout color='secondary' />
             </ListItemIcon>
-            <ListItemText primary="Logout" />
+            <ListItemText secondary="Logout" />
         </ListItem>
     );
 };

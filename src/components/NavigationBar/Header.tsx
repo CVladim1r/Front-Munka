@@ -16,24 +16,26 @@ const theme = createTheme({
 const Header = () => {
     return (
         <ThemeProvider theme={theme}>
-            <AppBar position="absolute" color="primary" style={{
+            <AppBar position="absolute" color="primary" sx={{boxShadow:'none'}}
+            style={{
                     width: 340,
                     display:'flex',
                     height: 60,
                     backgroundColor: '#fff',
                     marginTop: 50,
                     paddingBottom: '20px',
-                    borderRadius: '30px', 
+                    borderRadius: '30px 0 0 30px', 
                     marginLeft:'0'}}>
-                <Toolbar>
-                    <div style={{ flexGrow: 1, display:'flex'}}>
-                        <IconButton type="submit" aria-label="search">
+
+                <Toolbar sx={{width:"210px"}}>
+                    <div style={{ flexGrow: 1, display:'flex', backgroundColor: '#fef8f4',borderRadius:'49px'}}>
+                        <IconButton type="submit" aria-label="search" color = 'primary'>
                             <Search />
                         </IconButton>
                         <InputBase
-                            placeholder="search…"
+                            placeholder="Search"
                             inputProps={{ 'aria-label': 'search' }}
-                            style={{ backgroundColor: '#fef8f4', padding: '0 10px', borderRadius: 22, width: 140, height: 42 }}
+                            style={{  padding: '0 10px', borderRadius: 22, width: 140, height: 42, fontSize:'14px'}}
                         />
                     </div>
                     <IconButton aria-label="show new notifications" color="inherit">
