@@ -30,7 +30,7 @@ const AppRoutes: React.FC = () => {
 
     return (
         <Routes>
-            <Route path="/login" element={<MainPage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/registration" element={<RegisterPage />} />
             {isAuthenticated ? (
                 <Route
