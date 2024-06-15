@@ -4,7 +4,6 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import MainPage from './pages/dashboard/MainPage';
 import LoginPage from './pages/authentication/LoginPage.tsx';
 import RegisterPage from './pages/authentication/RegisterPage.tsx'
-import RegisterForm from './components/Auth/Registration/RegistrationForm';
 import MainLayout from './pages/MainLayout';
 import AnalyticsPage from './pages/dashboard/AnalyticsPage';
 import ContactsPage from './pages/dashboard/ContactsPage';
@@ -12,8 +11,6 @@ import ProfilePage from './pages/dashboard/ProfilePage';
 import VacanciesPage from './pages/dashboard/VacanciesPage';
 import TariffsPage from './pages/dashboard/TariffsPage.tsx';
 import ResponsivePage from './pages/dashboard/Responive.tsx';
-import { Login } from '@mui/icons-material';
-
 
 const App: React.FC = () => {
     return (
@@ -27,7 +24,7 @@ const App: React.FC = () => {
 
 const AppRoutes: React.FC = () => {
     const { isAuthenticated } = useAuth();
-
+    
     return (
         <Routes>
             <Route path="/login" element={<LoginPage />} />
