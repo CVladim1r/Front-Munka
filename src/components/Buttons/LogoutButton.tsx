@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ListItem, ListItemIcon, ListItemText, IconButton } from '@mui/material';
 import { Logout } from '@mui/icons-material';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 const LogoutButton: React.FC = () => {
     const { logout } = useContext(AuthContext) || { logout: () => {} };
@@ -13,9 +13,9 @@ const LogoutButton: React.FC = () => {
     return (
         <ListItem button onClick={handleLogout}>
             <ListItemIcon>
-                <Logout color='primary' />
+                <Logout color='secondary' />
             </ListItemIcon>
-            <ListItemText primary="Logout" />
+            <ListItemText secondary="Logout" />
         </ListItem>
     );
 };
