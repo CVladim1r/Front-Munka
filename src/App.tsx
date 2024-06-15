@@ -1,5 +1,5 @@
-import React from 'react';
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Navigate, Route, Outlet, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import MainPage from './pages/dashboard/MainPage';
 import LoginPage from './pages/authentication/LoginPage.tsx';
@@ -24,6 +24,11 @@ const App: React.FC = () => {
 
 const AppRoutes: React.FC = () => {
     const { isAuthenticated } = useAuth();
+
+    const handleUnauthorizedAccess = () => {
+        console.log('ИДИ НАХУЙ');
+        return null;
+    };
     
     return (
         <Routes>
@@ -48,7 +53,7 @@ const AppRoutes: React.FC = () => {
                     }
                 />
             ) : (
-                <Route path="*" element={<Navigate to="/login" />} />
+                <Route path="*" element={<>{handleUnauthorizedAccess()}<Navigate to="/login" /></>} />
             )}
         </Routes>
     );
